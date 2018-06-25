@@ -1,0 +1,50 @@
+.todolist {
+    background-color: #F7F7F7;
+    max-width: 340px;
+    padding: 30px 20px;
+}
+
+.list__head{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.list__date {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #6B6AD7;
+    font-weight: 600;
+}
+
+.list__year {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #A09FA6;
+    font-weight: 400;
+}
+
+.list__column:nth-child(2){
+    font-size: 12px;
+}
+
+.list__input{
+    margin-bottom: 20px;
+}
+
+.list__info {
+    display: flex;
+    padding: 25px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.list__name{
+    margin-left: 24px;
+    color: #A09FA6;
+}
+
+.list__name-checked{
+    text-decoration: line-through;
+
+}
