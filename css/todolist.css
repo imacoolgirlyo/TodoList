@@ -1,10 +1,18 @@
-.todolist {
+
+.todolist__container {
     background-color: #F7F7F7;
     max-width: 340px;
-    padding: 30px 20px;
+
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
 }
 
 .list__head{
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    background: linear-gradient(180deg, #F7F7F7, #F3F2F7);
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -12,10 +20,18 @@
 }
 
 .list__date {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 20px;
     color: #6B6AD7;
-    font-weight: 600;
+    
+}
+
+.list__date-bold{
+font-weight: 700;
+}
+
+.list__date-light{
+    font-weight: 300;
 }
 
 .list__year {
@@ -29,22 +45,42 @@
     font-size: 12px;
 }
 
+
 .list__input{
-    margin-bottom: 20px;
+    margin-left : 30px;
+    margin-right : 30px;
+}
+
+.fa-plus-circle{
+    color:#E3716E;
+    margin-left: 10px;
+    
 }
 
 .list__info {
-    display: flex;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
     padding: 25px 10px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
+
 .list__name{
+    font-size: 15px;
     margin-left: 24px;
-    color: #A09FA6;
+    color: #848484;
+    font-weight: 400;
 }
 
 .list__name-checked{
     text-decoration: line-through;
+    color:#ccccce;
 
+}
+
+.list__time{
+    margin-left: 10px;
+    font-size : 10px;
+    color:#ccccce;
 }

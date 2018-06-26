@@ -4,40 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <title>To Do List</title>
 </head>
 <body>
 <main class = "todolist">
+    <div class = "todolist__container">
     <div class = "list__head">
         <div class= "list__column">
-            <div class="list__date"> Thursday, 10th </div>
+            <div class="list__date"> 
+                <span class="list__date-bold">Thursday,</span> 
+                <span class="list__date-light">10th</span> </div>
             <div class = "list__year"> December </div>
         </div>
         <div class= "list__column">
-            <span> 3 Tasks </span>
+            <span class="list__date-light"> 3 Tasks </span>
         </div>
     </div>
-   <form >
-       
     <div class="list__input">
-       <input name= 'todo'/> 
-       <button name='save' type="button"> Save Today </button>
+        <input />
+    <i class="fas fa-plus-circle"></i>
     </div>
-   </form>
    <div class = "list__info"> 
-       <input type = "checkbox" checked/>
        <div class= "list__name list__name-checked"> Watching Youtube</div>
+       <div class="list__time">7:00 AM</div>
    </div>
    <div class = "list__info"> 
-        <input type = "checkbox" />
-        <div class= "list__name"> Watching Youtube</div>
+        <div class= "list__name"> Buying Pizza</div>
+        <div class="list__time">8:00 AM</div>
     </div>
     <div class = "list__info"> 
-        <input type = "checkbox" />
-        <div class= "list__name"> Watching Youtube</div>
+        <div class= "list__name"> 10 am Meeting</div>
+        <div class="list__time">10:00 AM</div>
+    </div>
         
-
+</div>
     </main>
 </body>
 </html>
