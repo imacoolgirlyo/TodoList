@@ -57,21 +57,31 @@ font-weight: 700;
     
 }
 
+.list__info-container{
+    margin-top: 10px;
+}
+
 .list__info {
+    
    display: flex;
    justify-content: space-between;
    align-items: center;
     padding: 25px 10px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-
+.list__info:hover{
+    background-color: #ededef;
+}
 
 .list__name{
+    width: 60%;
     font-size: 15px;
     margin-left: 24px;
     color: #848484;
     font-weight: 400;
 }
+
+
 
 .list__name-checked{
     text-decoration: line-through;
@@ -83,4 +93,11 @@ font-weight: 700;
     margin-left: 10px;
     font-size : 10px;
     color:#ccccce;
+}
+
+.list__remove{
+    font-size: 7px;
+    margin-right: 10px;
+    color: #848484;
+
 }
