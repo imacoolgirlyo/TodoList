@@ -1,22 +1,22 @@
 
     window.onload = function () {
+//      리스트 목록을 클릭했을 때, 완료 표시
         var list = document.getElementsByClassName('list__info');
-        
-        for(var i =0; i<list.length ; i++){
-           list[i].addEventListener('click', function(){
-               add_class(this);
-               
+        var j;
+        for(var  j=0; j<list.length ; j++){
+           list[j].addEventListener('click', function(){
+               add_class(this);    
            })
             };
             
         function add_class(e){
-            
             e.classList.toggle('list__name-checked');
-            // e.classList.toggle('.list__name-checked');
         }
 
+//      삭제 버튼 누르면, 리스트에서 삭제됨
         var close = this.document.getElementsByClassName('list__remove');
-        for(var i=0; i<close.length; i++){
+        var i;
+        for(i=0; i<close.length; i++){
             close[i].addEventListener('click', function(){
                 remove_list(this);
             })
@@ -27,10 +27,11 @@
             div.style.display = "none";
         }
 
+//      버튼을 눌렀을 때, 리스트에 추가
+
         var btn = document.getElementsByClassName('list__input-btn')[0];
 
         btn.addEventListener('click', newElement);
-//      var value1 = document.getElementsByClassName('list__input-content')[0].value;
 
         function newElement(){
             var value1 = document.getElementsByClassName('list__input-content')[0].value;
@@ -39,34 +40,41 @@
             var list__time = document.createElement("div");
             var list__remove = document.createElement("div");
 
-
             list__info.className = "list__info";
             list__name.className = "list__name";
             list__time.className = "list__time";
             list__remove.className = "list__remove";
 
             var container = document.getElementById('info-container').appendChild(list__info);
-
             container.appendChild(list__name);
             container.appendChild(list__time);
-            var remove_btn = container.appendChild(list__remove);
 
-            var remove_txt = document.createTextNode("x");
-            
-
-            remove_btn.appendChild(remove_txt);
             var t = document.createTextNode(value1);
-            console.log(t);
+            
             list__name.appendChild(t);
             
-                       
+            var remove_btn = container.appendChild(list__remove);
+            var remove_txt = document.createTextNode("X");
+            remove_btn.appendChild(remove_txt);
+
+            document.getElementsByClassName('list__input-content')[0].value = "";
 
             
-
-
+            for(i=0; i< close.length ; i++){
+                close[i].addEventListener('click', function(){
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }); 
 
         }
-       
-       
-        
+
+        console.log(list);
+        for(j=0; j<list.length ; j++){
+            list[j].addEventListener('click', function(){
+                this.classList.toggle('list__name-checked');
+            })
+        }
     }
+       
+    }
+    
