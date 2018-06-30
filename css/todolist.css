@@ -49,17 +49,19 @@ font-weight: 700;
 .list__input{
     margin-left : 30px;
     margin-right : 30px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-around;
     
 }
 
 .list__input-content{
-    width: 70%;
+    width: 65%;
     font-family: inherit;
     padding: 4px;
     border: 1px solid rgba(0,0,0,0.05);
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .list__input-btn{
@@ -69,7 +71,7 @@ font-weight: 700;
     font-size: 14px;
     border: 1px solid rgba(0,0,0,0.05);
     border-radius: 5px;
-    
+    margin-bottom: 10px;
 }
 
 .list__info-container{
@@ -77,26 +79,19 @@ font-weight: 700;
 }
 
 .list__info {
-    
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
     padding: 25px 10px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-.list__info:hover{
-    background-color: #ededef;
-}
-
-.list__name{
-    width: 60%;
     font-size: 15px;
     margin-left: 24px;
     color: #848484;
     font-weight: 400;
 }
-
-
+.list__info:hover{
+    background-color: #ededef;
+}
 
 .list__name-checked{
     text-decoration: line-through;
@@ -111,6 +106,7 @@ font-weight: 700;
 }
 
 .list__remove{
+    display: inline-block;
     font-size: 7px;
     margin-right: 10px;
     color: #848484;
