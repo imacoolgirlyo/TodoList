@@ -74,6 +74,14 @@ font-weight: 700;
     margin-bottom: 10px;
 }
 
+.title {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 400;
+    color: #6B6AD7;
+}
+
+
 .list__info-container{
     margin-top: 10px;
 }
