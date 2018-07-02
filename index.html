@@ -25,14 +25,14 @@
         </div>
     </div>
     <div class="list__input">
-        <input type = "text" class="list__input-content" name="todo" />
-        <button class="list__input-btn"> save </button>
+        <input type = "text" class="list__input-content" id="input"/>
+        <button id="add" class="list__input-btn"> save </button>
     </div>
     <div id= "info-container" class= "list__info-container">
-   <ul  class = "todo">
+   <ul id = "todo" class = "todo">
        <div class = "title">TO DO</div>
-       <li id = "todo" class="list__info">
-           Eating Pizza <span class ="list__remove">X</span>
+       <li class="list__info">
+           <div class="list__content">Eating Pizza</div> <div class ="list__remove">X</div>
         </li>
         
    </ul>
@@ -40,14 +40,14 @@
    <ul id="completed" class = "todo">
         <div class = "title">DONE</div>
         <li class="list__info list__name-checked">
-                Reading a Book <span class ="list__remove">X</span>
+                <div class="list__content">Reading a book</div> <div class ="list__remove">X</div>
         </li>
 
    </ul>
      </div>   
 </div>
     </main>
-<script type="text/javascript" src ="script.js" ></script>
+<script type="text/javascript" src ="js/upgrade.js" ></script>
 </body>
 
 </html>

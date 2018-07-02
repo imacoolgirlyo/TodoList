@@ -89,13 +89,18 @@ font-weight: 700;
 .list__info {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    padding: 25px 10px;
+    align-items: center;
+    
     border-bottom: 1px solid rgba(0,0,0,0.05);
     font-size: 15px;
     margin-left: 24px;
     color: #848484;
     font-weight: 400;
+}
+
+.list__content {
+    margin : 20px 10px;
+    width: 70%;
 }
 .list__info:hover{
     background-color: #ededef;
@@ -114,9 +119,13 @@ font-weight: 700;
 }
 
 .list__remove{
-    display: inline-block;
+    padding: 15px;
     font-size: 7px;
-    margin-right: 10px;
+    margin-right: 5px;
     color: #848484;
 
+}
+
+.display{
+    display: none;
 }

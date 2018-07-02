@@ -1,14 +1,17 @@
 
 //      리스트 목록을 클릭했을 때, 완료 표시
         var list = document.getElementById('todo');
-        list.addEventListener('click', add_class());
         console.log(list);
+        list.addEventListener('click', function(e){
+            e.target.classList.toggle('list__name-checked');
+            e.target.style.display = "none";
+            console.log(e.target.innerHTML);
 
-        function add_class(){
+            var li = document.createElement(li);
+            // var txt = document.createTextNode(e.target)
             
-            this.classList.toggle('list__name-checked');
-        }
 
+        });
 //      삭제 버튼 누르면, 리스트에서 삭제됨
         var close = this.document.getElementsByClassName('list__remove');
         var i;
