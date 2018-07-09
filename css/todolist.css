@@ -45,6 +45,14 @@ font-weight: 700;
     font-size: 12px;
 }
 
+.button{
+    width : 40px;
+    height: 40px;
+    background-color: red;
+    margin-top: 40px;
+}
+
+
 
 .list__input{
     margin-left : 30px;
