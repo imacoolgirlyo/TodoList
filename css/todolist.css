@@ -2,21 +2,27 @@
 .todolist__container {
     background-color: #F7F7F7;
     max-width: 340px;
-
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
 }
 
-.list__head{
+.list__head {
     border-radius: 10px 10px 0 0;
     padding: 20px;
     background: linear-gradient(180deg, #F7F7F7, #F3F2F7);
     margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+}
+
+.list__head-flex{
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    background: linear-gradient(180deg, #F7F7F7, #F3F2F7);
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .list__date {
@@ -62,6 +68,21 @@ font-weight: 700;
     border: 1px solid rgba(0,0,0,0.05);
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+.float{
+	width:40px;
+    height:40px;
+    float: right;
+	background-color:#DB7271;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:15px;
 }
 
 .list__input-btn{

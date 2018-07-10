@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
     <title>To Do List</title>
 </head>
@@ -13,18 +13,30 @@
     
 <main class = "todolist">
     <div class = "todolist__container">
-    <div class = "list__head">
-        <div class= "list__column">
-            <div class="list__date"> 
-                <span class="list__date-bold">Thursday,</span> 
-                <span class="list__date-light">10th</span> </div>
-            <div class = "list__year"> December </div>
+    
+        <div class = "list__head">
+            <div class = "list__head-flex">
+                <div class= "list__column">
+                    <div class="list__date"> 
+                        <span class="list__date-bold">Thursday,</span> 
+                        <span class="list__date-light">10th</span> </div>
+                    <div class = "list__year"> December </div>
+                </div>
+                <div class= "list__column">
+                    <span class="list__date-light"> 3 Tasks </span>
+                </div>
+            </div>
+            <div>
+                    <a href="#" class="float">
+                    <i class="fa fa-plus my-float"></i>
+                    </a>
+            </div>
+
         </div>
-        <div class= "list__column">
-            <span class="list__date-light"> 3 Tasks </span>
-        </div>
-    </div>
-    <div class="list__input">
+
+  
+    
+    <div class="list__input" style = "display : none">
         <input type = "text" class="list__input-content" id="input"/>
         <button id="add" class="list__input-btn"> save </button>
     </div>
