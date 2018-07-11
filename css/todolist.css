@@ -8,6 +8,10 @@
     margin-top: 50px;
 }
 
+.date__picker{
+    text-decoration: none;
+}
+
 .list__head {
     border-radius: 10px 10px 0 0;
     padding: 20px;
