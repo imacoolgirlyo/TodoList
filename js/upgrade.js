@@ -21,12 +21,14 @@ document.getElementById("add").addEventListener('click', function(){
     var input = document.getElementById("input").value;
 
     if(input === ""){
-       var warning = document.getElementsByClassName("warning")[0];
-       var txt = document.createTextNode(" You should write something ! ");
-       warning.appendChild(txt);
+       var warning = document.getElementById("warningmsg");
+       warning.innerHTML = "You should write something ! "
 
-    } else 
-    additem(input);
+    } else {
+        additem(input);
+        var warning = document.getElementById("warningmsg");
+        warning.innerHTML = ""
+    }
 
 })
 
