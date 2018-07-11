@@ -5,8 +5,17 @@ var data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem(
     completed : []
 };
 
-// 새로운 아이템 추가
+document.getElementsByClassName("float")[0].addEventListener('click', function(){
+    var input_div = document.getElementById("input_div");
+    if(input_div.style.display === "none"){
+        input_div.style.display = "block";
+    } else {
+        input_div.style.display = "none";
+    }
+})
 
+
+// 새로운 아이템 추가
 
 document.getElementById("add").addEventListener('click', function(){
     var input = document.getElementById("input").value;
