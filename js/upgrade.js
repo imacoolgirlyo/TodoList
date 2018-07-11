@@ -6,7 +6,7 @@ var data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem(
 };
 
 document.getElementsByClassName("float")[0].addEventListener('click', function(){
-    var input_div = document.getElementById("input_div");
+    var input_div = document.getElementById("list__input-id");
     if(input_div.style.display === "none"){
         input_div.style.display = "block";
     } else {
