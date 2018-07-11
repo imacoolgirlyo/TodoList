@@ -13,17 +13,20 @@
     
 <main class = "todolist">
     <div class = "todolist__container">
+
     
         <div class = "list__head">
             <div class = "list__head-flex">
-                <div class= "list__column">
-                    <div class="list__date"> 
-                        <span class="list__date-bold">Thursday,</span> 
-                        <span class="list__date-light">10th</span> </div>
-                    <div class = "list__year"> December </div>
-                </div>
-                <div class= "list__column">
-                    <span class="list__date-light"> 3 Tasks </span>
+                <a href = "#" class = "date__picker">
+                    <div class= "list__column">
+                        <div class="list__date"> 
+                            <span class="list__date-bold">Thursday,</span> 
+                            <span class="list__date-light">10th</span> </div>
+                        <div class = "list__year"> December </div>
+                    </div>
+                </a>
+                <div  class= "list__column">
+                    <span id = "number" class="list__date-light"> 1 Tasks </span>
                 </div>
             </div>
             <div>
@@ -33,22 +36,29 @@
             </div>
 
         </div>
-    <div id = "input_div" class="list__input"   style = "display : none">
+
+  
+    
+    <div id = "list__input-id" class="list__input">
+
         <input type = "text" class="list__input-content" id="input"/>
         <button id="add" class="list__input-btn"> save </button>
     </div>
-    
+
+    <div class = "warning"></div>
+
     <div id= "info-container" class= "list__info-container">
+    <div class = "title">TO DO</div>
    <ul id = "todo" class = "todo">
-       <div class = "title">TO DO</div>
+      
        <li class="list__info">
            <div class="list__content">Eating Pizza</div> <div class ="list__remove">X</div>
         </li>
         
    </ul>
-
+    <div class = "title">DONE</div>
    <ul id="completed" class = "todo">
-        <div class = "title">DONE</div>
+        
         <li class="list__info list__name-checked">
                 <div class="list__content">Reading a book</div> <div class ="list__remove">X</div>
         </li>
