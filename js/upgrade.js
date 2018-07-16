@@ -5,15 +5,17 @@ var data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem(
     completed : []
 };
 
+var input__form = document.getElementById('input__form');
+
 document.getElementsByClassName("float")[0].addEventListener('click', function(){
-    var input_div = document.getElementById("list__input-id");
-    if(input_div.style.display === "none"){
-        input_div.style.display = "block";
-    } else {
-        input_div.style.display = "none";
-    }
+    input__form.style.display = 'block';
 })
 
+window.onclick = function(event){
+    if(event.target == input__form){
+        input__form.style.display = "none";
+    }
+}
 
 // 새로운 아이템 추가
 
@@ -40,6 +42,9 @@ function additem(v){
 
     var txt = document.createTextNode(v);
     content.appendChild(txt);
+
+    var icon = document.createElement("i");
+    icon.className = "fas fa-pen";
     
     var close = document.createElement("div"); 
     close.className = "list__remove";
@@ -47,6 +52,7 @@ function additem(v){
     close.appendChild(closetxt);
 
     item.appendChild(content);
+    item.appendChild(icon);
     item.appendChild(close);
     
     document.getElementById("todo").appendChild(item);
@@ -55,6 +61,7 @@ function additem(v){
     
     close.addEventListener('click', removeItem);
     content.addEventListener('click', completeItem);
+    icon.addEventListener('click', EditItem);
     
     ChangeNum();
 
@@ -97,3 +104,9 @@ function completeItem (){
     }
     ChangeNum();
 }
+
+function EditItem(){
+    console.log(this.parentNode);
+}
+
+// 수정 말고, 입력할 떄 인풋 팝업, 색갈 선택 
