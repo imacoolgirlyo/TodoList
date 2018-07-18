@@ -21,7 +21,7 @@ window.onclick = function(event){
 
 document.getElementById("add").addEventListener('click', function(){
     var input = document.getElementById("input").value;
-
+    console.log("hi");
     if(input === ""){
        var warning = document.getElementById("warningmsg");
        warning.innerHTML = "You should write something ! "
@@ -30,11 +30,16 @@ document.getElementById("add").addEventListener('click', function(){
         additem(input);
         var warning = document.getElementById("warningmsg");
         warning.innerHTML = ""
+        input__form.style.display = "none";
     }
 
+    
 })
 
 function additem(v){
+
+
+    
     var item = document.createElement("li"); 
     item.className = "list__info";
     var content = document.createElement("div");

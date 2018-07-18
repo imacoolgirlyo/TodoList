@@ -40,13 +40,14 @@
 
   
 
-    <div id= "warningmsg" class = "warning"></div>
+    
 
     <div id= "info-container" class= "list__info-container">
     <div class = "title">TO DO</div>
    <ul id = "todo" class = "todo">
       
        <li class="list__info">
+           <div class = "list__importance"> </div>
            <div class="list__content">Eating Pizza</div>
            <i class="fas fa-pen"></i>
             <div class ="list__remove">X</div>
@@ -71,9 +72,25 @@
         <h2 class = "popup__title"> TO DO</h2>
         <form>
             <div id = "list__input-id" class="list__input">
-                <input type = "text" class="list__input-content" id="input"/>
-                <button id="add" class="list__input-btn"> save </button>
+                <div class = "list__input-top">
+                    <div class= "popup-font"> What to do </div>
+                    <input type = "text" class="list__input-content" id="input"/>
+
+                </div>
+                <div id= "warningmsg" class = "warning"></div>
+                
+                <div class = "list__input-bottom">
+                    <div class= "popup-font"> Level of Importance </div>
+                    <div class= "importance"> 
+                        <form >
+                        <input  id = "high" name = "toggle" type = "radio" checked/> <label class = "radio__btn-label">High</label>
+                        <input  id = "med" name = "toggle" type = "radio" /> <label class = "radio__btn-label">Med</label>
+                        <input  id = "low" name = "toggle" type = "radio" /> <label class = "radio__btn-label">Low</label>
+                        </form>
+                    </div>
+                </div>
             </div>
+            <button id="add" class="list__input-btn"> save </button>
         </form>
     </div>
 
