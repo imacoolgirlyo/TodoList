@@ -1,10 +1,4 @@
 
-//localStorage 만들기
-var data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem('todoList')):{
-    todo : [],
-    completed : []
-};
-
 var input__form = document.getElementById('input__form');
 
 document.getElementsByClassName("float")[0].addEventListener('click', function(){
@@ -19,15 +13,22 @@ window.onclick = function(event){
 
 // 새로운 아이템 추가
 
-document.getElementById("add").addEventListener('click', function(){
+document.getElementById("save").addEventListener('click', function(){
     var input = document.getElementById("input").value;
-    console.log("hi");
+    var toggle = document.getElementsByName('toggle');
+
+
     if(input === ""){
        var warning = document.getElementById("warningmsg");
        warning.innerHTML = "You should write something ! "
 
     } else {
-        additem(input);
+
+        for(var i =0 ; i< toggle.length ; i++){
+        if(toggle[i].checked == true){
+            additem(input, i)
+        }
+    }
         var warning = document.getElementById("warningmsg");
         warning.innerHTML = ""
         input__form.style.display = "none";
@@ -36,10 +37,17 @@ document.getElementById("add").addEventListener('click', function(){
     
 })
 
-function additem(v){
+function additem(v, r){
 
+    var importance = document.createElement("div");
+    importance.className = "list__importance";
 
-    
+    if(r == "2"){
+        importance.classList.add("list__importance-green");
+    }else if(r == "1"){
+        importance.classList.add("list__importance-blue");
+    }
+
     var item = document.createElement("li"); 
     item.className = "list__info";
     var content = document.createElement("div");
@@ -56,6 +64,7 @@ function additem(v){
     var closetxt = document.createTextNode("X");
     close.appendChild(closetxt);
 
+    item.appendChild(importance);
     item.appendChild(content);
     item.appendChild(icon);
     item.appendChild(close);
@@ -93,7 +102,6 @@ function completeItem (){
     var ul = this.parentNode.parentNode; 
     var li =this.parentNode; 
     
-    console.log(ul.id);
     var listID = ul.id;
 
     if(listID === "todo"){

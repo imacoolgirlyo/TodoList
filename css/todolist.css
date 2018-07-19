@@ -134,11 +134,25 @@ font-weight: 700;
 }
 
 .list__importance{
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     background-color: red;
     border-radius: 50%;
 }
+
+.list__importance-red{
+    background-color: red;
+}
+
+.list__importance-green{
+    background-color: greenyellow;
+}
+
+.list__importance-blue {
+    background-color: blue;
+}
+
+
 
 .list__content {
     margin : 20px 10px;
