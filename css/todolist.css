@@ -110,8 +110,8 @@ font-weight: 700;
 
 
 .title {
-    margin-top: 20px;
-    margin-left: 20px;
+    
+    margin: 20px;
     font-weight: 400;
     color: #6B6AD7;
 }
@@ -211,6 +211,7 @@ font-weight: 700;
 
 .popup__title{
     font-weight: 600;
+    margin: 10px;
 }
 
 .popup-font{
