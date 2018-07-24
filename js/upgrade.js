@@ -92,7 +92,7 @@ const importanceCheck = () => {
     if(num == 0){
         return "red";
     }else if(num == 1){
-        return "yello";
+        return "yellow";
     }else if(num === 2){
         return "blue";
     }
