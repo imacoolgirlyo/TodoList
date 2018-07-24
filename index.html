@@ -13,6 +13,7 @@
 <body>
     
 <main class = "todolist">
+        
     <div id = "container" class = "todolist__container">
 
     
@@ -27,70 +28,61 @@
                     </div>
                 </a>
                 <div  class= "list__column">
-                    <span id = "number" class="list__date-light"> 1 Tasks </span>
+                    <span id = "number" class="list__date-light"> 0 Tasks </span>
                 </div>
             </div>
             <div>
-                    <a href="#" class="float">
+                    <a href="#" class="plus__btn">
                         <i class="fa fa-plus my-float"></i>
                     </a>
             </div>
 
         </div>
 
-  
-
-    
-
     <div id= "info-container" class= "list__info-container">
     <div class = "title">TO DO</div>
    <ul id = "todo" class = "todo">
       
-       <li class="list__info">
-           <!-- <div class = "list__importance"> </div>
+       <!-- <li class="list__info">
+           <div class = "list__importance"> </div>
            <div class="list__content">Eating Pizza</div>
            <i class="fas fa-pen"></i>
-            <div class ="list__remove">X</div> -->
-        </li>
+            <div class ="list__remove">X</div>
+        </li> -->
         
    </ul>
     <div class = "title">DONE</div>
    <ul id="completed" class = "todo">
         
-        <li class="list__info list__name-checked">
-                <!-- <div class="list__content">Reading a book</div>
+        <!-- <li class="list__info list__name-checked">
+                <div class="list__content">Reading a book</div>
                 <i class="fas fa-pen"></i>
-                <div class ="list__remove">X</div> -->
-        </li>
+                <div class ="list__remove">X</div>
+        </li> -->
 
    </ul>
      </div>   
 </div>
 
-<div id = "input__form" class = "popup">
+<div class = "popup__container">
     <div class = "popup__content"> 
         <div class = "popup__title"><h2> TO DO</h2></div>
-        <form>
+        <form class='js-form'>
             <div id = "list__input-id" class="list__input">
                 <div class = "list__input-top">
                     <div class= "popup-font"> What to do </div>
                     <input type = "text" class="list__input-content" id="input"/>
-
                 </div>
                 <div id= "warningmsg" class = "warning"></div>
                 
-                <div class = "list__input-bottom">
-                    <div class= "popup-font"> Level of Importance </div>
-                    <div class= "importance"> 
-                        <form >
-                        <input id = "high" name = "toggle" type = "radio" checked/> <label for="high" class = "radio__btn-label">High</span>
-                        <input  id = "med" name = "toggle" type = "radio" /> <label for="med"  class = "radio__btn-label">Med</span>
-                        <input  id = "low" name = "toggle" type = "radio" /> <label for="low" class = "radio__btn-label">Low</span>
-                        </form>
-                    </div>
-                </div>
+                <div class= "popup-font"> Level of Importance </div>
+                        
+                <input id = "high" name = "importanceBtn" type = "radio" checked/> <label for="high" class = "radio__btn-label">High</label></span>
+                <input  id = "med" name = "importanceBtn" type = "radio" /> <label for="med"  class = "radio__btn-label">Med </label></span>
+                <input  id = "low" name = "importanceBtn" type = "radio" /> <label for="low" class = "radio__btn-label">Low </label></span>
+                        
             </div>
-            <button id="save" class="list__input-btn"> save </button>
+            <button type="submit" id="save" class="list__input-btn"> Add to do </button>
         </form>
     </div>
 

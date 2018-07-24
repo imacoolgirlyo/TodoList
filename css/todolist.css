@@ -73,7 +73,7 @@ font-weight: 700;
     margin-bottom: 5px;
 }
 
-.float{
+.plus__btn{
 	width:40px;
     height:40px;
     float: right;
@@ -136,7 +136,6 @@ font-weight: 700;
 .list__importance{
     width: 7px;
     height: 7px;
-    background-color: red;
     border-radius: 50%;
 }
 
@@ -181,12 +180,11 @@ font-weight: 700;
     color: #848484;
 
 }
-
-.display{
+.blockTonone{
     display: none;
 }
 
-.popup {
+.popup__container {
     display: none;
     position: fixed;
     left : 0;
@@ -195,6 +193,11 @@ font-weight: 700;
     height: 100%;
     z-index: 1;
     background-color: rgba(0,0,0,0.4);
+}
+
+.noneToblock {
+    display: block;
+    
 }
 
 .popup__content{
