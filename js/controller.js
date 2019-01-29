@@ -9,11 +9,22 @@
         this.view.bind('newTodo', function(title){
             self.addItem(title);
         });
-        console.log(self);
+        this.view.bind('itemRemove', function(item){
+            self.removeItem(item.id);
+        });
 
         this.showAll();
 
-    }
+    };
+
+    Controller.prototype.removeItem = function(id){
+        var self = this;
+        self.model.remove(id, function(){
+            self.view.render('removeItem', id);
+        });
+        this.showAll();
+
+    };
 
     Controller.prototype.showAll = function (){
         var self = this;
@@ -27,12 +38,12 @@
         var self = this;
         if(title.trim() ===''){
             return;
-        }
+        };
         self.model.create(title, function(){
             self.view.render('clearNewTodo', title);
         });
         this.showAll();
-    }
+    };
     exports.app = exports.app || {};
     exports.app.Controller = Controller;
 })(this);

@@ -18,6 +18,10 @@
     Model.prototype.read = function(callback){
         this.storage.findAll(callback);
     }
+
+    Model.prototype.remove = function(id, callback){
+        this.storage.remove(id, callback);
+    }
     exports.app = exports.app || {};
     exports.app.Model = Model;
 
