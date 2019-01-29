@@ -21,6 +21,7 @@ window.onclick = function(event){
 showupBtn.addEventListener('click', changePopupDisplay);
 
 const completeItem = event => {
+    event.target.prevent();
     
     const item = event.target;
     const li = item.parentNode;
@@ -51,7 +52,7 @@ const addEvents = (listContent, removeBtn) => {
 
 const createListitem = (todoText, importanceColor) => {
 
-    
+    console.log("create item")
     const listItem = document.createElement('li');
     listItem.classList.add('list__info');
 
@@ -99,9 +100,8 @@ const importanceCheck = () => {
 }
 
 const handleFormSubmit = event => {
-
+    console.log("handel")
     const importanceColor = importanceCheck();
-    console.log(importanceColor);
     const todoText = textinput.value;
     createListitem(todoText, importanceColor);
     textinput.value = "";

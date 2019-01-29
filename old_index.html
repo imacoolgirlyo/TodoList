@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <title>To Do List</title>
+</head>
+
+<body>
+    
+<main class = "todolist">
+        
+    <div id = "container" class = "todolist__container">
+
+    
+        <div class = "list__head">
+            <div class = "list__head-flex">
+                <a href = "#" class = "date__picker">
+                    <div class= "list__column">
+                        <div class="list__date"> 
+                            <span class="list__date-bold">Thursday,</span> 
+                            <span class="list__date-light">10th</span> </div>
+                        <div class = "list__year"> December </div>
+                    </div>
+                </a>
+                <div  class= "list__column">
+                    <span id = "number" class="list__date-light"> 0 Tasks </span>
+                </div>
+            </div>
+            <div>
+                    <a href="#" class="plus__btn">
+                        <i class="fa fa-plus my-float"></i>
+                    </a>
+            </div>
+
+        </div>
+
+    <div id= "info-container" class= "list__info-container">
+    <div class = "title">TO DO</div>
+   <ul id = "todo" class = "todo">
+      
+       <!-- <li class="list__info">
+           <div class = "list__importance"> </div>
+           <div class="list__content">Eating Pizza</div>
+           <i class="fas fa-pen"></i>
+            <div class ="list__remove">X</div>
+        </li> -->
+        
+   </ul>
+    <div class = "title">DONE</div>
+   <ul id="completed" class = "todo">
+        
+        <!-- <li class="list__info list__name-checked">
+                <div class="list__content">Reading a book</div>
+                <i class="fas fa-pen"></i>
+                <div class ="list__remove">X</div>
+        </li> -->
+
+   </ul>
+     </div>   
+</div>
+
+<div class = "popup__container">
+    <div class = "popup__content"> 
+        <div class = "popup__title"><h2> TO DO</h2></div>
+        <form class='js-form'>
+            <div id = "list__input-id" class="list__input">
+                <div class = "list__input-top">
+                    <div class= "popup-font"> What to do </div>
+                    <input type = "text" class="list__input-content" id="input"/>
+                </div>
+                <div id= "warningmsg" class = "warning"></div>
+                
+                <div class= "popup-font"> Level of Importance </div>
+                        
+                <input id = "high" name = "importanceBtn" type = "radio" checked/> <label for="high" class = "radio__btn-label">High</label></span>
+                <input  id = "med" name = "importanceBtn" type = "radio" /> <label for="med"  class = "radio__btn-label">Med </label></span>
+                <input  id = "low" name = "importanceBtn" type = "radio" /> <label for="low" class = "radio__btn-label">Low </label></span>
+                        
+            </div>
+            <button type="submit" id="save" class="list__input-btn"> Add to do </button>
+        </form>
+    </div>
+
+</div>
+    </main>
+<script type="text/javascript" src ="js/upgrade.js" ></script>
+</body>
+
+</html>
