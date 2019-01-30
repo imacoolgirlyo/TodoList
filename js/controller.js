@@ -35,13 +35,13 @@
         self.model.remove(id, function(){
             self.view.render('removeItem', id);
         });
-        this.showAll();
 
     };
 
     Controller.prototype.showAll = function (){
         var self = this;
-        
+
+        console.log('showAll');
         this.model.read(function(data) {
             self.view.render('showEntries', data);
         });
@@ -61,4 +61,4 @@
     exports.app.Controller = Controller;
 })(this);
 
-// self = this;
+// 문제 1 : completed 후 새로 list를 추가하면 다시 completed line-through 가 해제됨

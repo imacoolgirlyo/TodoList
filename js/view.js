@@ -18,7 +18,7 @@
             temp.addEventListener('change', function(){
                 
                 handler(self.$newTodo.value);
-                console.log(handler);
+                
             });
         }else if(event === 'itemRemove'){
             
@@ -81,6 +81,11 @@
 
     View.prototype._addItem = function(id){
         this.$todoList.innerHTML = this.template.insert(id);
+        for (var i =0; i<id.length; i++){
+            if(id[i].completed){
+                this._elementComplete(id[i].id, id[i].completed);
+            };
+        }
         
     }
     // list 추가해서 template에 id 값 전달하면 추가될 애의 id 값만 전달한다. template은 하나의 리스트를 만들고 반환하는데 
@@ -88,20 +93,16 @@
 
     View.prototype._removeItem = function(id){
         var elem = this.$todoList.querySelector('[data-id="' + id +'"]');
-        console.log(elem);
+        
         if(elem){
-            console.log('hello???');
             this.$todoList.removeChild(elem);
         }
     }
 
     View.prototype._elementComplete = function(id, completed){
-        console.log(this.$todoList);
-        console.log("id :" + id);
+        console.log(id);
         var elem = document.querySelector('[data-id="' + id +'"]');
-        console.log(elem);
-        // 왜 elem 이 none 이지????
-       
+
         if(elem){
             console.log('view, elementComplete' + completed);
             elem.className = completed ? 'completed' : '';
