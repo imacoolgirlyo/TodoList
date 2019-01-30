@@ -46,11 +46,25 @@
                 console.log(target.parentNode);
                 handler({id:self._getItemId(target.parentNode, 'li')});
             })
+        }else if(event === 'itemEditDone'){
+            // enter 하면, 해당 값을 모델로 전달, storage 에 저장하고, 다시 변경 한 값을 render 함
+            var todo = self.$todoList;
+            todo.addEventListener('keypress', function(event){
+                if(event.keyCode === 13){
+                    var target = event.target;
+                    var inputValue = target.value;
+
+                    if(inputValue != ""){
+                    handler({id:self._getItemId(target,'li'), inputValue});
+                    }
+                    
+                }
+            })
+
+
         }
     }; 
-    // 더블 클릭하면  화면이 input으로 바뀌어야함 
-    // 1) input dom 만들고 , 
-    // input change event 도 걸어놓음
+    
 
     View.prototype._getItemId = function(element, tagName){
         var li;
@@ -91,10 +105,27 @@
             editItem : function(){
                 self._editItem(data.id, data.title);
                 
+            },
+            editItemDone : function(){
+                self._editItemDone(data.id, data.title);
             }
         
         };
         viewCommands[viewCmd]();
+    }
+
+    View.prototype._editItemDone = function(id, title){
+        var listItem = document.querySelector('[data-id="' + id +'"]');
+        if(listItem){
+            var input = document.querySelector('input.edit', listItem);
+            listItem.removeChild(input);
+            listItem.className = listItem.className.replace('editing', '');
+
+            console.log(listItem);
+            var label = listItem.querySelector('label');
+            label.innerHTML = title;
+        };
+        
     }
 
     View.prototype._editItem = function(id, title){

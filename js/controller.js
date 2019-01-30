@@ -19,10 +19,24 @@
             self.editItem(item.id);
 
         });
+        this.view.bind('itemEditDone', function(item){
+           self.editItemDone(item.id, item.inputValue);
+        });
 
         this.showAll();
 
     };
+    Controller.prototype.editItemDone = function(id, title){
+        var self = this;
+        self.model.update(id, {'title' : title}, function(){
+            self.view.render('editItemDone' , {
+                id : id,
+                title : title
+            });
+        });
+    };
+
+
 // id 값 
     Controller.prototype.editItem = function(id){
         var self = this;
