@@ -12,10 +12,23 @@
         this.view.bind('itemRemove', function(item){
             self.removeItem(item.id);
         });
+        this.view.bind('itemToggle', function(item){
+            self.toggleComplete(item.id, item.completed);
+        });
 
         this.showAll();
 
     };
+
+    Controller.prototype.toggleComplete = function(id, completed){
+        var self = this;
+        self.model.update(id, { completed : completed}, function(){
+            self.view.render('elementComplete', {
+                id : id,
+                completed : completed
+            });
+        })
+    }
 
     Controller.prototype.removeItem = function(id){
         var self = this;

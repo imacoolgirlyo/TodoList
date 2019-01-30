@@ -38,6 +38,9 @@
             view = view + template;
         }
         return view;
+        // view는 어디로 return 되는거지 => return 값은 insert함수를 부른 view에서 this.template.insert(id) 의 값이되고, 
+        // todolist의 innerHtml 이된다....
+
     }
 
 
@@ -46,7 +49,3 @@
     exports.app.Template = Template;
 
 })(this);
-
-// html 조각 들이 생성자 함수에 있을거고  view가 렌더링할때 받는
-// data들이 template 을 통해서 화면에 보여질 것임
-

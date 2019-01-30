@@ -17,7 +17,10 @@
 
     Store.prototype.findAll = function(callback){
         callback = callback || function(){};
+        
         callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
+        // todos 객체 리턴 
+        // todos : [{}, {}]
     };
 
     Store.prototype.save = function(updateData, callback, id){
@@ -25,9 +28,20 @@
         var todos = data.todos;
 
         callback = callback || function(){};
-
         if(id){
-            console.log(id);
+            for(var i = 0; i<todos.length ; i++){
+                if(todos[i].id == id){
+                    
+                    for(var key in updateData){
+                        todos[i][key] = updateData[key]; 
+                    }
+                    break;
+                } 
+                
+            }
+            
+            localStorage[this._dbName] = JSON.stringify(data);
+            callback.call(this, todos);
 
         }else{
             updateData.id = new Date().getTime();

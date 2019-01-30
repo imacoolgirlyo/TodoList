@@ -22,6 +22,11 @@
     Model.prototype.remove = function(id, callback){
         this.storage.remove(id, callback);
     }
+
+    Model.prototype.update = function(id, data, callback){
+        
+        this.storage.save(data, callback, id);
+    }
     exports.app = exports.app || {};
     exports.app.Model = Model;
 
