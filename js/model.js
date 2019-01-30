@@ -15,8 +15,18 @@
         this.storage.save(newItem, callback);
     }
 
-    Model.prototype.read = function(callback){
-        this.storage.findAll(callback);
+    Model.prototype.read = function(query,callback){
+        var queryType = typeof query;
+        callback = callback || function(){};
+
+        if(queryType === 'function'){
+            callback = query;
+            return this.storage.findAll(callback);
+        }else if(queryType === 'string' || queryType ==='number'){
+            query = parseInt(query, 10);
+            this.storage.find({id: query} , callback);
+        }
+        
     }
 
     Model.prototype.remove = function(id, callback){

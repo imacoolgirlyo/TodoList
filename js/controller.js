@@ -15,10 +15,27 @@
         this.view.bind('itemToggle', function(item){
             self.toggleComplete(item.id, item.completed);
         });
+        this.view.bind('itemEdit', function(item){
+            self.editItem(item.id);
+
+        });
 
         this.showAll();
 
     };
+// id 값 
+    Controller.prototype.editItem = function(id){
+        var self = this;
+        self.model.read(id, function(title){
+            self.view.render('editItem', {'id': id , 'title' :title });
+
+        console.log(title);
+        }
+            
+        );
+
+
+    }
 
     Controller.prototype.toggleComplete = function(id, completed){
         var self = this;
@@ -40,9 +57,8 @@
 
     Controller.prototype.showAll = function (){
         var self = this;
-
-        console.log('showAll');
         this.model.read(function(data) {
+            console.log(data);
             self.view.render('showEntries', data);
         });
     };

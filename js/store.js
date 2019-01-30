@@ -15,6 +15,22 @@
 
     }
 
+    Store.prototype.find = function(findData, callback){
+        var data = JSON.parse(localStorage[this._dbName]);
+        var todos = data.todos;
+        callback = callback || function(){};
+        // findData.id : 1533 랑 localStorage에 있는 데이터 id 랑 같은 애의 value 반환 
+        if(typeof findData.id === 'number'){
+            for(var i=0; i<todos.length ; i++){
+                if(todos[i].id == findData.id){
+                   callback.call (this, todos[i].title);
+                }
+            }
+        }
+       
+
+    };
+
     Store.prototype.findAll = function(callback){
         callback = callback || function(){};
         

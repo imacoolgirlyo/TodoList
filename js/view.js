@@ -39,10 +39,18 @@
                 }
 
             })
-            
-
+        }else if(event === 'itemEdit'){
+            var todo = self.$todoList;
+            todo.addEventListener('dblclick', function(event){
+                var target = event.target;
+                console.log(target.parentNode);
+                handler({id:self._getItemId(target.parentNode, 'li')});
+            })
         }
     }; 
+    // 더블 클릭하면  화면이 input으로 바뀌어야함 
+    // 1) input dom 만들고 , 
+    // input change event 도 걸어놓음
 
     View.prototype._getItemId = function(element, tagName){
         var li;
@@ -63,6 +71,11 @@
             showEntries : function (){
                 console.log('View.render.showEntries execute');
                 self._addItem(data);
+                for (var i =0; i<data.length; i++){
+                    if(data[i].completed){
+                        self._elementComplete(data[i].id, data[i].completed);
+                    };
+                }
             },
             clearNewTodo : function(){
                 console.log('View.render.clearNewTodo execute');
@@ -74,18 +87,35 @@
             },
             elementComplete : function(){
                 self._elementComplete(data.id, data.completed);
+            },
+            editItem : function(){
+                self._editItem(data.id, data.title);
+                
             }
+        
         };
         viewCommands[viewCmd]();
     }
 
+    View.prototype._editItem = function(id, title){
+        var listItem = document.querySelector('[data-id="' + id +'"]');
+        if(listItem){
+            console.log(listItem);
+            listItem.className = listItem.className + ' editing';
+
+            var input = document.createElement('input');
+            input.className = 'edit';
+            listItem.appendChild(input);
+            input.focus();
+            input.value = title;
+        }
+
+
+    }
+
     View.prototype._addItem = function(id){
         this.$todoList.innerHTML = this.template.insert(id);
-        for (var i =0; i<id.length; i++){
-            if(id[i].completed){
-                this._elementComplete(id[i].id, id[i].completed);
-            };
-        }
+        
         
     }
     // list 추가해서 template에 id 값 전달하면 추가될 애의 id 값만 전달한다. template은 하나의 리스트를 만들고 반환하는데 
