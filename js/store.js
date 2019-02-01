@@ -15,18 +15,21 @@
 
     }
 
-    Store.prototype.find = function(findData, callback){
+    Store.prototype.find = function(query, callback){
+        // query == {id : 1234567} or {completed : true}
         var data = JSON.parse(localStorage[this._dbName]);
         var todos = data.todos;
-        callback = callback || function(){};
-        // findData.id : 1533 랑 localStorage에 있는 데이터 id 랑 같은 애의 value 반환 
-        if(typeof findData.id === 'number'){
-            for(var i=0; i<todos.length ; i++){
-                if(todos[i].id == findData.id){
-                   callback.call (this, todos[i].title);
-                }
-            }
+        if(!callback){
+            return ;
         }
+        
+        callback.call(this, todos.filter(function(todo){
+            for(var key in query){
+                if(query[key] !== todo[key]){
+                    return false;
+                }}
+                return true;
+        }));
        
 
     };
@@ -75,7 +78,6 @@
         callback = callback || function(){};
         var data = JSON.parse(localStorage[this._dbName]);
         var todos = data.todos;
-        if(typeof id === 'number'){
             for(var i=0; i<todos.length ; i++){
                 if(todos[i].id == id){
                     todos.splice(i,1);
@@ -84,20 +86,7 @@
             }
             localStorage[this._dbName] = JSON.stringify(data);
             callback.call(this, todos);
-        }else{
-            console.log('remove remove');
-            for(var i =0; i < id.length ; i++){ // id 
-                for(var j=0; j<todos.length ; j++){
-                    if(todos[j].id = id[i]){
-                        todos.splice(i,1);
-                    }
-                }
-            }
-            localStorage[this._dbName] = JSON.stringify(data);
-            callback.call(this, todos);
-        }
 
-        
     };
     
     exports.app = exports.app || {};

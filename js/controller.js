@@ -23,10 +23,8 @@
         this.view.bind('itemEditDone', function(item){
            self.editItemDone(item.id, item.inputValue);
         });
-        this.view.bind('clearCompleted', function(dataSet){
-            console.log('this is controller in clearCompleted');
-            console.log(dataSet);
-            self.clearCompleted(dataSet);
+        this.view.bind('clearCompleted', function(){
+            self.clearCompleted();
         });
 
         this.showAll();
@@ -37,10 +35,13 @@
 // 1. view에서 class로 정보 가져와서 해당 아이템만 모델에 삭제 요청해도 되나 ? view
 // 에서 끌고 올 수 있는 정보(target.value나 class 같이) 는 다가져오고 model에 요청해도 
 // 되는 지 아니면 무조건 객체의 상태에 대한 정보는 model 에서 가져와야 하는건지 ? 
-    Controller.prototype.clearCompleted = function(id){
+    Controller.prototype.clearCompleted = function(){
         var self = this;
-        self.model.remove(id, function(){
-            self.view.render('removeItem',id);
+        self.model.read({completed : true}, function(items){
+            items.forEach(function(item){
+                self.removeItem(item.id);
+            })
+            // self.view.render('removeItem',id);
         })
     }
 
@@ -59,10 +60,9 @@
 // id 값 
     Controller.prototype.editItem = function(id){
         var self = this;
-        self.model.read(id, function(title){
-            self.view.render('editItem', {'id': id , 'title' :title });
+        self.model.read(id, function(data){
+            self.view.render('editItem', {'id': id , 'title' :data[0].title });
 
-        console.log(title);
         }
             
         );

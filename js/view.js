@@ -65,15 +65,17 @@
             // 버튼을 누르면, completed : false 인애를 모델에서 삭제하고 view에서 렌더링
            var clearBtn = document.querySelector('.clear-completed');
             clearBtn.addEventListener('click', function(){
-                // todolist 에서 checkbox 
-                var done = todo.querySelectorAll('.completed');
-                var dataSet = [];
-                for(var i=0; i< done.length ; i++){
-                    dataSet.push(parseInt(done[i].dataset.id, 10));
-                }
-                console.log(dataSet);
+                // // todolist 에서 checkbox 
+                // var done = todo.querySelectorAll('.completed');
+                // var dataSet = [];
+                // for(var i=0; i< done.length ; i++){
+                //     dataSet.push(parseInt(done[i].dataset.id, 10));
+                // }
+                // console.log(dataSet);
                 
-                handler(dataSet);
+                // handler(dataSet);
+                handler();
+
             })
         }
     }; 
