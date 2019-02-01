@@ -1,15 +1,18 @@
 (function(){
     'use strict';
     function App(){
-        console.log('App created !');
+        console.log(this);
+        
         this.storage = new app.Store(name);
         this.model = new app.Model(this.storage);
         this.template = new app.Template();
         this.view = new app.View(this.template);
         this.controller = new app.Controller(this.model, this.view);
-
+        console.log(app);
     }
     var todo = new App();
+    
+    
 })();
 
 // 각각의 기능별로 모듈화를 시키기 위해서 app.js 파일을 생성함 

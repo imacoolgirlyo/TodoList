@@ -30,7 +30,9 @@
     }
 
     Model.prototype.remove = function(id, callback){
-        this.storage.remove(id, callback);
+        
+            this.storage.remove(id, callback);
+        
     }
 
     Model.prototype.update = function(id, data, callback){

@@ -60,8 +60,21 @@
                     
                 }
             })
-
-
+        }else if(event === 'clearCompleted'){
+            var todo = self.$todoList;
+            // 버튼을 누르면, completed : false 인애를 모델에서 삭제하고 view에서 렌더링
+           var clearBtn = document.querySelector('.clear-completed');
+            clearBtn.addEventListener('click', function(){
+                // todolist 에서 checkbox 
+                var done = todo.querySelectorAll('.completed');
+                var dataSet = [];
+                for(var i=0; i< done.length ; i++){
+                    dataSet.push(parseInt(done[i].dataset.id, 10));
+                }
+                console.log(dataSet);
+                
+                handler(dataSet);
+            })
         }
     }; 
     
@@ -153,11 +166,21 @@
     // 이 결과값을 todolist의 innerHTML로 지정한다. innerHTML 사용하면 이전에 만들었던 리스트들은 다 사라지는 거 아닌가.
 
     View.prototype._removeItem = function(id){
-        var elem = this.$todoList.querySelector('[data-id="' + id +'"]');
         
-        if(elem){
-            this.$todoList.removeChild(elem);
+        if(typeof id == 'number'){
+            var elem = this.$todoList.querySelector('[data-id="' + id +'"]');
+            if(elem){
+                this.$todoList.removeChild(elem);
+                }
+        }else{
+            for(var i=0; i<id.length ; i++){
+                var elem = this.$todoList.querySelector('[data-id="' + id[i] +'"]');
+                if(elem){
+                    this.$todoList.removeChild(elem);
+                }
+            }
         }
+        
     }
 
     View.prototype._elementComplete = function(id, completed){
