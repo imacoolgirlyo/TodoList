@@ -1,12 +1,17 @@
-## TodoList
+## 라이브러리, 프레임워크를 사용하지 않은 **Vanila JS**로 구현한 Todo list 
 
-![Todo List UI](/todolist.png)
-[Pinterest](https://www.pinterest.co.kr/pin/345862446366514699/)에서 괜찮은 UI를 발견해서 한번 만들어봤다.
+### 목차 
+- [[Todo List] 1. Vanila JS를 이용한 기본 Todo list 구현](https://velog.io/@imacoolgirlyo/TodoMVC-VanilaJS-%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-1-)
+- [[Todo List] 2. Todo list에서의 MVC 아키텍쳐 역할](https://velog.io/@imacoolgirlyo/Todo-List-2.-MVC-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4)
 
-아직은 추가, 삭제 기능 밖에 없는데 기능들을 추가할 예정
 
-1. 수정
-2. 입력
-    색깔 별로 중요도 표시
-    시간 입력
-3. 날짜 변경
+### 1. Basic Todo list 
+
+- old_index.html 과 js/upgrade.js
+
+### 2. MVC 패턴을 이용하여 구현한 Todo list 
+
+[TodoMVC](http://todomvc.com/)은 토이 프로젝트의 기본인 Todo list를 Vanila JS를 포함하여 Angular, React 등 다양한 라이브러리와 프레임워크를 사용하여 만들어 놓은 프로젝트입니다. 
+
+그 중 Vanila JS를 이용하여 만들어 보았고 [TodoList based MVC Project with Vanila JS](https://github.com/JaeYeopHan/TodoMVC_VanilaJS) 튜토리얼 순서를 참고하였습니다. 
+

@@ -43,7 +43,6 @@
             var todo = self.$todoList;
             todo.addEventListener('dblclick', function(event){
                 var target = event.target;
-                console.log(target.parentNode);
                 handler({id:self._getItemId(target.parentNode, 'li')});
             })
         }else if(event === 'itemEditDone'){

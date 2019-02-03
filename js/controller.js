@@ -2,10 +2,10 @@
     'use strict';
     console.log(this);
     function Controller(model, view){
-        
         this.model = model;
         this.view = view;
         var self = this;
+        console.log(this);
     // bind을 통해 레코드 변경을 자동적으로 view에 반영 
         this.view.bind('newTodo', function(title){
             self.addItem(title);

@@ -24,6 +24,8 @@
         }
         
         callback.call(this, todos.filter(function(todo){
+            console.log("callback.call - id");
+            console.log(todo);
             for(var key in query){
                 if(query[key] !== todo[key]){
                     return false;
