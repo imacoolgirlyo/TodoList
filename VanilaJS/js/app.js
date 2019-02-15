@@ -1,3 +1,4 @@
+// 즉시 실행 함수 표현식 
 (function(){
     'use strict';
     function App(){
