@@ -10,9 +10,10 @@ export default class MainSection extends Component {
                 <ul className= "todo-list">
                     {todos.map(todo => 
                         // <div> {todo.text}</div>
-                        <TodoItem key = {todo.id} todo= {todo} />
+                        <TodoItem key = {todo.id} todo= {todo} {...actions}/>
                     )}
                 </ul>
+                <Footer></Footer>
             </section>
         )
     }
