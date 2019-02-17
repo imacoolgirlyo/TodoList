@@ -25,8 +25,8 @@ export default class TodoItem extends Component {
     }
 
     render(){
-
         const {todo, deleteTodo} = this.props
+        let element
         if(this.state.editing){
             element = (
                 <TodoTextInput
@@ -63,3 +63,5 @@ export default class TodoItem extends Component {
 
 // {this.handleDoubleClick} 이랑 deleteTodo의 차이 ... constructor는 뭐고
 // handleInput은 뭐란 말임.. state가 어디에 있어야 할지 헷갈림
+// Header에서도 TodoTextInput 쓰고, TodoItem에서도 TodoTextInput 쓰는데 각각 props가 다름 
+// 그래도 되는 것임 ? 

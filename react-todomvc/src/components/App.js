@@ -40,8 +40,11 @@ class App extends Component {
 
   }
 
- editSubmit = () => {
-
+ editTodo = (id, text) => {
+   const todos = this.state.todos.map(todo => 
+      todo.id === id ? {...todo, text} : todo // 이게 먼말
+    )
+    this.setState({todos})
   }
 
   // editTodo = () => {
@@ -53,7 +56,7 @@ class App extends Component {
   actions = {
     addTodo : this.addTodo,
     deleteTodo : this.deleteTodo,
-    editSubmit : this.editSubmit
+    editTodo : this.editTodo
     
   }
   render() {

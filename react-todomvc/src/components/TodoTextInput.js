@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 export default class TodoTextInput extends Component {
     state = {
-        editText : ''
+        editText : this.props.text || ''
     }
 
     handleChange = event => {
@@ -23,8 +23,13 @@ export default class TodoTextInput extends Component {
    
     render(){
         return (
-            <input
-                className = "new-todo"
+            <input 
+                className = {
+                    classnames({
+                        edit: this.props.editing,
+                        'new-todo' : this.props.newTodo
+                    })
+                }
                 value = {this.state.editText}
                 onChange = {this.handleChange}
                 placeholder = {this.props.placeholder}
