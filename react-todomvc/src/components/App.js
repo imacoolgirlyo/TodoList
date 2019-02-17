@@ -38,12 +38,23 @@ class App extends Component {
     const todos = this.state.todos.filter(todo => todo.id !== id)
     this.setState({todos})
 
+  }
+
+ editSubmit = () => {
 
   }
 
+  // editTodo = () => {
+  //   console.log(todo)
+  //   this.setState({editing : todo.id})
+
+  // }
+
   actions = {
     addTodo : this.addTodo,
-    deleteTodo : this.deleteTodo
+    deleteTodo : this.deleteTodo,
+    editSubmit : this.editSubmit
+    
   }
   render() {
     return (
