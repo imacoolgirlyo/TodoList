@@ -25,7 +25,7 @@ export default class TodoItem extends Component {
     }
 
     render(){
-        const {todo, deleteTodo} = this.props
+        const {todo, deleteTodo, completeTodo} = this.props
         let element
         if(this.state.editing){
             element = (
@@ -41,6 +41,7 @@ export default class TodoItem extends Component {
                 <input 
                     className="toggle"
                     type="checkbox"
+                    onChange = {() => completeTodo(todo.id)}
                     checked = {todo.completed}
                 />
                 <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>

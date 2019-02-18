@@ -46,17 +46,19 @@ class App extends Component {
     )
     this.setState({todos})
   }
+  completeTodo = (id) => {
+    const todos = this.state.todos.map(todo =>
+      todo.id === id ? {...todo, completed : !todo.completed} : todo
+      )
+      this.setState({todos})
 
-  // editTodo = () => {
-  //   console.log(todo)
-  //   this.setState({editing : todo.id})
-
-  // }
+  }
 
   actions = {
     addTodo : this.addTodo,
     deleteTodo : this.deleteTodo,
-    editTodo : this.editTodo
+    editTodo : this.editTodo,
+    completeTodo : this.completeTodo
     
   }
   render() {
