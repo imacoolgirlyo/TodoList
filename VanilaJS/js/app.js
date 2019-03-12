@@ -10,9 +10,10 @@
         this.view = new app.View(this.template);
         this.controller = new app.Controller(this.model, this.view);
         console.log(app);
+        console.log(this.storage.constructor);
     }
     var todo = new App();
-    
+   
     
 })();
 
